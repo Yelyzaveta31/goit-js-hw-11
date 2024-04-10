@@ -18,13 +18,13 @@ const searchFormSubmit = event => {
 
     const searchQuery = event.target.elements.user_image.value;
 
+
 fetchImageByQuery(searchQuery)
 .then(data => {
-    const imageTemplate = data.results
-    .map(image => createGalleryCard(image))
-        .join('');
-
-        gallery.innerHTML(imageTemplate);
+    const imageTemplate = data.map(image => createGalleryCard(image))
+        const stringImage = imageTemplate.join('');
+        
+        gallery.innerHTML(stringImage);
 })
 .catch(error => {
     console.log(error);

@@ -1,5 +1,6 @@
 // У файлі render-functions.js створи функції для відображення елементів інтерфейсу.
-export const createGalleryCard = ({ tags, urls: { webformatURL } }) => {
+export const createGalleryCard = data => {
+  return data.map(({largeImageURL, webformatURL, tags, likes, views, comments, downloads}) => {
     return `
     <li class="gallery-item">
     <a class=""gallery-link" href="${largeImageURL}"
@@ -23,6 +24,6 @@ export const createGalleryCard = ({ tags, urls: { webformatURL } }) => {
  <p class="title">Downloads</p>
 <p class="value">${downloads}</p>
     </li>
-    </ul>
-    `;
-  };
+    </ul>`;
+  })
+};
