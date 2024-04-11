@@ -50,7 +50,8 @@ fetchImageByQuery(searchQuery)
     }
     else{
     const imageTemplate = data.hits.map(image => createGalleryCard(image)).join('');
-        gallery.innerHTML = imageTemplate;}
+        gallery.innerHTML = imageTemplate;
+        lightbox.refresh();}
 })
 .catch(error => {
     iziToast.error({
@@ -67,4 +68,4 @@ fetchImageByQuery(searchQuery)
 searchForm.addEventListener('submit', searchFormSubmit);
 
 
-
+const lightbox = new SimpleLightbox('.gallery a');
