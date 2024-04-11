@@ -22,6 +22,7 @@ const searchFormSubmit = event => {
         return;
     }
 
+    gallery.innerHTML = '';
   
 fetchImageByQuery(searchQuery)
 .then(data => {
