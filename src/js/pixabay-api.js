@@ -1,12 +1,23 @@
-// У файлі pixabay-api.js зберігай функції для HTTP-запитів.
-
+const  BASE_URL = 'https://pixabay.com';
+const API_KEY = '43329687-8aa5e523ea6ec5a66d8459b66';
 
 export function fetchImageByQuery(query) {
-return fetch(`https://pixabay.com/api/?key=43329687-8aa5e523ea6ec5a66d8459b66&q=${query}&image_type=photo&orientation=horizontal&safesearch=true`)
+    const searchParams = new URLSearchParams({
+        key: API_KEY,
+        q: query,
+        orientation: 'horizontal',
+        safesearch: 'true',
+        image_type: 'photo',
+    });
+
+return fetch(`${BASE_URL}/api/?${searchParams}`)
 .then(response => {
     if(!response.ok){
         throw new Error(response.status);
     }
     return response.json();
+})
+.catch(error => {
+    console.error(error);
 });
-}
+};
