@@ -1,4 +1,4 @@
-// У файлі main.js напиши всю логіку роботи додатка.
+
 
 import { createGalleryCard } from "./js/render-function";
 import { fetchImageByQuery } from "./js/pixabay-api";

@@ -1,4 +1,4 @@
-// У файлі render-functions.js створи функції для відображення елементів інтерфейсу.
+
 export const createGalleryCard = data => {
   const { largeImageURL, webformatURL, tags, likes, views, comments, downloads } = data;
   return `
