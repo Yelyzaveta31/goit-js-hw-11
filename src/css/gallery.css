@@ -1,5 +1,5 @@
 .container {
-    width: 1128px;
+    min-width: 1128px;
     margin: 0 auto;
   }
   
@@ -8,9 +8,11 @@
     gap: 24px;
     flex-wrap: wrap;
     position: relative;
+    justify-content: center;
+
   }
   .gallery-item {
-    width: calc((100% - 48px) / 3);
+    width: 360px;
     border: 1px solid #808080;
     display: flex;
     flex-wrap: wrap;
@@ -20,13 +22,10 @@
   .gallery-link {
     display: block;
     width: 100%;
-    max-height: 160px;
+    height: 160px;
     overflow: hidden;
   }
-  /* .gallery-link > img {
-    object-fit: fill;
-    object-position: center;
-  } */
+
   .item-info {
     display: flex;
     flex-wrap: nowrap;
